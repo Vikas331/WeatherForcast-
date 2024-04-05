@@ -60,7 +60,7 @@
           </div>
           <div class="temparature">
             <div class="cloudimg">
-              <img src="./img/weatherlogotwo.png" alt="no image" />
+              <img src="" alt="no image" class="cloudimage" />
             </div>
             <div class="temp">
               <div class="tempval">24 deg c</div>
@@ -88,13 +88,7 @@
         <div class="card-body">
           <div class="forecasthead">
             <div>Forecast  (<span class="forcastcityname"></span>)</div>
-            <!-- <div>
-              <input type="checkbox" id="toggle" class="toggleCheckbox" />
-              <label for="toggle" class="toggleContainer">
-                <div>3 days</div>
-                <div>5 days</div>
-              </label>
-            </div> -->
+            
             <div class="toggleContainer">
               5 days
             </div>
@@ -114,7 +108,6 @@
         </div>
       </div>
     </div>
-
     <script>
       function formatTime(timestamp) {
         var date = new Date(timestamp * 1000);
@@ -124,7 +117,8 @@
       console.log(window.location);
       const urlParams = new URLSearchParams(window.location.search);
       console.log(urlParams.get("cityname"));
-      let metric = "metric"
+      let metric = "metric";
+      let cloudsname = document.querySelector(".cloudimage");
       let cityname = urlParams.get("cityname");
       if(cityname === null || cityname===undefined){
         cityname = "Delhi"
@@ -144,8 +138,26 @@
           weather.main.humidity + "%";
         document.querySelector(".weatherdata").innerHTML =
           weather.weather[0].main;
-        document.querySelector(".description").innerHTML =
+          document.querySelector(".description").innerHTML =
           weather.weather[0].description;
+          
+          if(weather.weather[0].main === "Clouds"){
+            cloudsname.src = "http://openweathermap.org/img/wn/" + weather.weather[0].icon + ".png"
+          }else if(weather.weather[0].main === "Clear"){
+            cloudsname.src = "http://openweathermap.org/img/wn/" + weather.weather[0].icon + ".png"
+          }else if(weather.weather[0].main === "Clear"){
+            cloudsname.src = "http://openweathermap.org/img/wn/" + weather.weather[0].icon + ".png"
+          }else if(weather.weather[0].main === "Rain"){
+            cloudsname.src = "http://openweathermap.org/img/wn/" + weather.weather[0].icon + ".png"
+          }else if(weather.weather[0].main === "Drizzle"){
+            cloudsname.src = "http://openweathermap.org/img/wn/" + weather.weather[0].icon + ".png"
+          }else if(weather.weather[0].main === "Mist"){
+            cloudsname.src = "http://openweathermap.org/img/wn/" + weather.weather[0].icon + ".png"
+          }else{
+            cloudsname.src = "http://openweathermap.org/img/wn/" + weather.weather[0].icon + ".png"
+          }
+           
+          
       }
       async function logtwoMovies(location) {
         let apiUrl ="http://api.openweathermap.org/data/2.5/forecast?q=" +location +"&appid=" + apiKey+"&units=" +metric;
@@ -178,5 +190,6 @@
       logtwoMovies(cityname);
       weatherinfo(cityname);
     </script>
+
   </body>
 </html>
