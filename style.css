@@ -59,6 +59,7 @@ header {
   border-radius: 20px;
   box-shadow: 0px 0px 10px 3px gray;
   color: white;
+  width: 400px;
 }
 .weathercard{
   background-image: linear-gradient(162deg , #27548f 31%, #466ea2 64%);
@@ -67,11 +68,12 @@ header {
   background: #5e87bc;
   width: 400px;
 }
-img {
-  width: 100%;
-}
+
 .cloudimg {
   width: 50%;
+}
+.cloudimage {
+  width: 75%;
 }
 .humunity{
   text-align: center;
@@ -125,44 +127,7 @@ img {
   cursor: pointer;
   padding: 5px 15px;
 }
-/* .toggleContainer::before {
-  content: '';
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  left: 0%;
-  border-radius:20px;
-  background: white;
-  transition: all 0.3s;
-}
-.toggleCheckbox:checked + .toggleContainer::before {
-   left: 50%;
-}
-.toggleContainer div {
-  padding: 6px;
-  text-align: center;
-  z-index: 1;
-}
-.toggleCheckbox {
-  display: none;
-}
-.toggleCheckbox:checked + .toggleContainer div:first-child{
-  color: white;
-  transition: color 0.3s;
-}
-.toggleCheckbox:checked + .toggleContainer div:last-child{
-  color: #343434;
-  transition: color 0.3s;
-}
-.toggleCheckbox + .toggleContainer div:first-child{
-  color: #343434;
-  transition: color 0.3s;
-}
-.toggleCheckbox + .toggleContainer div:last-child{
-  color: white;
-  transition: color 0.3s;
-} */
-
+ 
 .forecasthead {
   display: flex;
   justify-content: space-between;
@@ -193,4 +158,19 @@ img {
 .example {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+ul{
+  margin: 10px 34px;
+}
+.aboutcontent {
+  box-shadow: 0px 0px 5px green;
+  margin: 50px;
+  padding: 20px;
+  border-radius: 10px;
+  background-image: url("./img/clouds.jpg");
+  position: relative;
+}
+ 
+ul li {
+  line-height: 2.5;
 }
